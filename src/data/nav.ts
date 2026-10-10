@@ -1,10 +1,8 @@
-import { SITE_BASE } from '../config';
-
-const BASE = SITE_BASE.replace(/\/$/, ''); // Remove trailing slash
+import { withBase } from '../config';
 
 export const nav = [
-  { label: 'Reviews', link: `${BASE}/reviews/` },
-  { label: 'Blog', link: `${BASE}/blogs/` },
+  { label: 'Reviews', link: withBase('/reviews/') },
+  { label: 'Blog', link: withBase('/blogs/') },
 ] as const;
 
 export type NavItem = (typeof nav)[number];
