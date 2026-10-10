@@ -9,6 +9,17 @@ export const SITE_DOMAIN = "https://kimfooburn001.github.io/Kim";
 export const SITE_URL = SITE_DOMAIN + "/";
 export const SITE_BASE = "/Kim/";
 
+export function withBase(path: string): string {
+  const normalized = path.startsWith('/') ? path : `/${path}`;
+  if (normalized === '/') return SITE_BASE;
+  if (normalized.startsWith(SITE_BASE)) return normalized;
+  return `${SITE_BASE.replace(/\/$/, '')}${normalized}`;
+}
+
+export function withSiteUrl(path: string): string {
+  return new URL(withBase(path), SITE_URL).toString();
+}
+
 /** Asset paths (for files served from astro-public/) */
 export const ASSET_BASE = SITE_DOMAIN + SITE_BASE + "static";
 export const TEXTURE_GALLERY = ASSET_BASE + "/img/textures/galaxy.webp";
@@ -28,4 +39,6 @@ export default {
   TEXTURE_ILLUSION,
   SITE_TITLE,
   SITE_DESCRIPTION,
+  withBase,
+  withSiteUrl,
 };
