@@ -1,4 +1,6 @@
-const BASE = '/Kim';
+import { SITE_BASE } from '../config';
+
+const BASE = SITE_BASE.replace(/\/$/, ''); // Remove trailing slash
 
 export const nav = [
   { label: 'Reviews', link: `${BASE}/reviews/` },
