@@ -5,7 +5,7 @@
  */
 
 /** Primary domain and base URL */
-export const SITE_DOMAIN = "https://flamegarnet89.github.io/Kim";
+export const SITE_DOMAIN = "https://kimfooburn001.github.io/Kim";
 export const SITE_URL = SITE_DOMAIN + "/";
 export const SITE_BASE = "/Kim/";
 
