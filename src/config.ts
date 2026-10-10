@@ -11,9 +11,12 @@ export const SITE_BASE = "/Kim/";
 
 export function withBase(path: string): string {
   const normalized = path.startsWith('/') ? path : `/${path}`;
-  if (normalized === '/') return SITE_BASE;
-  if (normalized.startsWith(SITE_BASE)) return normalized;
-  return `${SITE_BASE.replace(/\/$/, '')}${normalized}`;
+  const base = SITE_BASE.replace(/\/$/, '');
+
+  if (normalized === '/') return base;
+  if (normalized.startsWith(base)) return normalized;
+
+  return `${base}${normalized}`;
 }
 
 export function withSiteUrl(path: string): string {
