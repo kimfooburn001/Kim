@@ -23,11 +23,9 @@
  * + `--radius: 1rem` clip the outer corners.
  */
 ---
-import type { CollectionEntry } from 'astro:content';
+import type { PostEntry } from '../types/posts';
 import { withBase } from '../config';
 import CoverImage from './CoverImage.astro';
-
-type PostEntry = CollectionEntry<'blogs'>;
 
 interface Props {
   entry: PostEntry;
