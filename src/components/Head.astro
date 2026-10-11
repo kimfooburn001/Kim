@@ -1,6 +1,6 @@
 ---
-import { SITE_TITLE } from '../config';
-import { SITE_TITLE } from '../config'
+import { SITE_TITLE, SITE_HOME_TITLE } from '../config';
+const finalTitle = isHome ? SITE_HOME_TITLE : title ? `${title} - ${SITE_TITLE}` : SITE_TITLE;
 
 interface Props {
   title?: string;
