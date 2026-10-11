@@ -45,6 +45,6 @@ const posts: TaggedPost[] = await Promise.all(
     </div>
 
     <div id="toggle-input" class="max-w-7xl mx-auto"></div>
-    <TaggedList client:load posts={posts} />
+    <TaggedList client:load posts={posts} base={SITE_BASE} />
   </div>
 </BaseLayout>
