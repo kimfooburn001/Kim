@@ -9,7 +9,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import TaggedList from '../../components/islands/TaggedList.svelte';
 import type { TaggedPost } from '../../components/islands/TaggedList.svelte';
 import { resolveCover } from '../../lib/covers';
-import { withBase } from '../../config';
+import { SITE_BASE, withBase } from '../../config';
+
+const BASE = SITE_BASE.replace(/\/$/, '');
+
+const entries = await getCollection('reviews');
+const sorted = entries.sort((a, b) => a.data.weight - b.data.weight);
 
 const entries = await getCollection('blogs');
 // Hugo's `RegularPages.ByWeight` falls back to `date` (descending) when
