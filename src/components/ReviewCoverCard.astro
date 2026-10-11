@@ -30,7 +30,7 @@ const title = entry.data.short_title ?? entry.data.name;
   <div class="card_translator">
     <a
       class="card_rotator small_rot card_layer block"
-      href={`/reviews/${entry.id}/`}
+      href={withBase(`/reviews/${entry.id}/`)}
       aria-label={title}
     >
       <div class="card_layer">
