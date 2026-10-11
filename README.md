@@ -13,11 +13,6 @@ via `.github/workflows/gh-pages.yml`.
 It used to be a Hugo site. The migration is documented under [`plans/`](plans/).
 
 ## To use the default GitHub URL, you need to add/modify your repository name to the links:
-- in file astro.config.mjs:
-  ```bash
-    site: 'https://<username>.github.io/<repo name>',
-    base: '/<repo name>/',
-  ```
 - in file src/config.ts and src/styles/config.css to add the repository name and github username to the links. Maybe CNAME file too
 
 ## Quick start
