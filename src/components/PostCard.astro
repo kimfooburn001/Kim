@@ -68,9 +68,11 @@ const href = withBase(`/${entry.collection}/${entry.id}/`);
             <div class="mb-3">
               <ul class="flex flex-wrap text-xs font-medium -m-1">
                 {tags.map((tag) => (
-                  <li class={`m-1 inline-flex text-center py-1 px-3 rounded-full tag-${tag}`}>
-                    {tag}
-                  </li>
+                  <Fragment>
+                    <li class={`m-1 inline-flex text-center py-1 px-3 rounded-full tag-${tag}`}>
+                      {tag}
+                    </li>
+                  </Fragment>
                 ))}
               </ul>
             </div>
