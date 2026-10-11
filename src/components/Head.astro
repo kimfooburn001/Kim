@@ -1,6 +1,5 @@
 ---
 import { SITE_TITLE, SITE_HOME_TITLE } from '../config';
-const finalTitle = isHome ? SITE_HOME_TITLE : title ? `${title} - ${SITE_TITLE}` : SITE_TITLE;
 
 interface Props {
   title?: string;
@@ -9,6 +8,7 @@ interface Props {
 const path = Astro.url.pathname;
 const isHome = path === '/' || path === '';
 const { title } = Astro.props;
+const finalTitle = isHome ? SITE_HOME_TITLE : title ? `${title} - ${SITE_TITLE}` : SITE_TITLE;
 ---
 <head>
   <meta name="generator" content={Astro.generator} />
