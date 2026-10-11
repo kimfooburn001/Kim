@@ -20,8 +20,13 @@
     img_larger: string;
   }
 
-  type Props = { posts: TaggedPost[] };
-  let { posts }: Props = $props();
+  type Props = { posts: TaggedPost[]; base: string };
+  let { posts, base }: Props = $props();
+  
+  function prefixBase(link: string): string {
+    if (link.startsWith(base)) return link;
+    return base + link;
+  }
 
   let tagActivations = $state<Record<string, boolean>>({});
 
