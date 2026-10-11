@@ -22,7 +22,6 @@
  * mixed-source covers stays uniform; `card_rotator`'s `overflow:hidden`
  * + `--radius: 1rem` clip the outer corners.
  */
----
 import type { PostEntry } from '../types/posts';
 import { withBase } from '../config';
 import CoverImage from './CoverImage.astro';
@@ -32,7 +31,7 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const tags: string[] = (entry.data.tags as string[]) ?? [];
+const tags = Array.isArray(entry.data.tags) ? (entry.data.tags as string[]) : [];
 const title = entry.data.short_title ?? entry.data.title ?? entry.id;
 const description = entry.data.description ?? '';
 const href = withBase(`/${entry.collection}/${entry.id}/`);
@@ -54,8 +53,7 @@ const href = withBase(`/${entry.collection}/${entry.id}/`);
               />
             </figure>
           </header>
-
-          <div class="px-4 pb-4 flex flex-col flex-grow min-h-[212px]">
+          <div class="px-4 pb-4 flex flex-col flex-grow min-h-[13.25rem]">
             <div class="mb-3">
               <ul class="flex flex-wrap text-xs font-medium -m-1">
                 {tags.map((tag) => (
