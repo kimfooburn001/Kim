@@ -328,14 +328,6 @@ pre.astro-code {
   @apply mx-auto;
   max-width: 64rem;
 }
-.reduced-code {
-  @apply mx-auto;
-  max-width: 50rem;
-}
-.expanded-code {
-  @apply mx-auto;
-  max-width: none;
-}
 
 /* Language-less fences are notebook output text: tucked under the code block
    that produced them, and muted. */
