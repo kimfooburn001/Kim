@@ -8,17 +8,17 @@ import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
 
 export const GET: APIRoute = async () => {
-  const [reviews, blogs] = await Promise.all([
-    getCollection('reviews'),
+  const [bookReviews, blogs] = await Promise.all([
+    getCollection('bookReviews'),
     getCollection('blogs'),
   ]);
   const payload = {
     counts: {
-      reviews: reviews.length,
+      bookReviews: bookReviews.length,
       blogs: blogs.length,
     },
     sample: {
-      reviews: reviews.slice(0, 3).map((r) => ({ id: r.id, title: r.data.title })),
+      bookReviews: bookReviews.slice(0, 3).map((r) => ({ id: r.id, title: r.data.title })),
       blogs: blogs.slice(0, 3).map((b) => ({ id: b.id, title: b.data.title })),
     },
   };

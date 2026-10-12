@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import ReviewCoverCard from '../ReviewCoverCard.astro';
 
-const reviews = (await getCollection('reviews'))
+const bookReviews = (await getCollection('bookReviews'))
   .sort((a, b) => +b.data.date - +a.data.date)
   .slice(0, 5);
 ---
@@ -11,7 +11,7 @@ const reviews = (await getCollection('reviews'))
     <h1>Book Reviews</h1>
     <p>
       For those loving progression fantasy and LitRPG, here are my latest reviews.
-      <a class="under" href="/reviews">More available here, of course!</a>
+      <a class="under" href="/bookReviews">More available here, of course!</a>
       And if you want an fun flowchart or tier list, that's available too!
     </p>
   </div>

@@ -136,7 +136,7 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export const getStaticPaths = (async () => {
-  const reviews = await getCollection('reviews');
+  const reviews = await getCollection('bookReviews');
   return reviews.map((review) => ({ params: { slug: review.id }, props: { review } }));
 }) satisfies GetStaticPaths;
 

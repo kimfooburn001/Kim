@@ -25,14 +25,14 @@ import type { GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 
 export const getStaticPaths = (async () => {
-  const reviews = await getCollection('reviews');
-  return reviews.map((review) => ({
+  const bookReviews = await getCollection('bookReviews');
+  return bookReviews.map((review) => ({
     params: { slug: review.id },
     props: { review },
   }));
 }) satisfies GetStaticPaths;
 
-const { review } = Astro.props;
+const { bookReviews } = Astro.props;
 ---
 ```
 

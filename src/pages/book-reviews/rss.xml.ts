@@ -3,14 +3,14 @@ import { getCollection } from 'astro:content';
 import type { APIContext } from 'astro';
 
 export async function GET(context: APIContext) {
-  const entries = await getCollection('reviews');
+  const entries = await getCollection('bookReviews');
 
   const sorted = entries.sort(
     (a, b) => b.data.date.getTime() - a.data.date.getTime(),
   );
 
   return rss({
-    title: 'Cosmic Coding — Book Reviews',
+    title: 'Book Reviews',
     description: 'Progression fantasy and LitRPG book reviews',
     site: context.site!,
     customData: '<language>en-us</language>',
@@ -19,7 +19,7 @@ export async function GET(context: APIContext) {
       description: entry.data.sentence,
       author: entry.data.auth,
       pubDate: entry.data.date,
-      link: `/reviews/${entry.id}/`,
+      link: `/bookReviews/${entry.id}/`,
     })),
   });
 }

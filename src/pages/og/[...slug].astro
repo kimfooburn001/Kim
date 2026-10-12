@@ -4,7 +4,7 @@ import CoverImage from '../../components/CoverImage.astro';
 import '../../styles/main.css';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('reviews');
+  const entries = await getCollection('bookReviews');
   return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 

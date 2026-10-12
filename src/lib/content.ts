@@ -11,8 +11,8 @@ export const getRecentBlogs = async (n = 6) =>
     sort((a, b) => +b.data.date - +a.data.date).
     slice(0, n);
 
-export const getRecentReviews = async (n = 5) =>
-  (await getCollection('reviews')).
+export const getRecentBookReviewss = async (n = 5) =>
+  (await getCollection('bookReviews')).
     sort((a, b) => +b.data.date - +a.data.date).
     slice(0, n);
 
@@ -23,7 +23,7 @@ export const getRecentReviews = async (n = 5) =>
  * deterministic across platforms.
  */
 export const getReviewsByWeight = async () =>
-  (await getCollection('reviews')).
+  (await getCollection('bookReviews')).
     sort((a, b) => {
       const dw = a.data.weight - b.data.weight;
       if (dw !== 0) return dw;
@@ -31,7 +31,7 @@ export const getReviewsByWeight = async () =>
     });
 
 export const getReviewsByDate = async () =>
-  (await getCollection('reviews')).
+  (await getCollection('bookReviews')).
     sort((a, b) => +b.data.date - +a.data.date);
 
 /**

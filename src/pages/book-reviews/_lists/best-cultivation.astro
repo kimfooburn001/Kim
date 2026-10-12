@@ -7,7 +7,7 @@ import { withBase } from '../../config';
 
 const TIER_ORDER: ReviewTier[] = ['S', 'A', 'B', 'C', 'D', 'F', 'π'];
 
-const entries = await getCollection('reviews');
+const entries = await getCollection('bookReviews');
 
 const filtered = entries
   .filter((e) => e.data.tags.map((t) => t.toLowerCase()).includes('cultivation'))

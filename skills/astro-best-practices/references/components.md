@@ -16,12 +16,12 @@ interface Props {
 }
 
 const { title, count = 0 } = Astro.props;
-const reviews = (await getCollection('reviews')).slice(0, count);
+const bookReviews = (await getCollection('bookReviews')).slice(0, count);
 ---
 
 <section>
   <h2>{title}</h2>
-  {reviews.map((r) => <Card review={r} />)}
+  {bookReviewss.map((r) => <Card review={r} />)}
 </section>
 
 <style>
