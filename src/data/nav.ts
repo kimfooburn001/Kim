@@ -1,7 +1,7 @@
 import { withBase } from '../config';
 
 export const nav = [
-  { label: 'Reviews', link: withBase('/reviews/') },
+  { label: 'Book Reviews', link: withBase('/book-reviews/') },
   { label: 'Blog', link: withBase('/blogs/') },
 ] as const;
 
