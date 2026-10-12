@@ -2,7 +2,7 @@
 
 # [Puregarnet's Journal](https://kimfooburn001.github.io/Kim/)
 
-Source for [Puregarnet's Journal]([https://kimfooburn001.github.io/Kim/])) — Kim's
+Source for [Puregarnet's Journal]([https://kimfooburn001.github.io/Kim/])) — Puregarnet's
 personal site. Books, reviews, blog posts.
 
 The site is a static build produced by **Astro v5** with **Svelte 5**
