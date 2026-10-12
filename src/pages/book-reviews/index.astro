@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ReviewsExplorer from '../../components/islands/ReviewsExplorer.svelte';
+import { resolveReviewCover } from '../../lib/covers';
+import type { Post, ReviewTier } from '../../lib/types';
+import { SITE_BASE, withBase } from '../../config';
+
+const BASE = SITE_BASE.replace(/\/$/, '');
+
+const entries = await getCollection('reviews');
+const sorted = entries.sort((a, b) => a.data.weight - b.data.weight);
+
+const posts: Post[] = await Promise.all(
+  sorted.map(async (entry) => {
+    const cover = await resolveReviewCover(entry);
+    const sortedTags = [...entry.data.tags].sort().map((t) => t.toLowerCase());
+    const reviewPath = withBase(`/book-reviews/${entry.id}/`);
+    return {
+      name: entry.data.name,
+      link: reviewPath,
+      abslink: new URL(reviewPath, Astro.site!).toString(),
+      author: entry.data.auth,
+      review: entry.data.review as ReviewTier,
+      weight: entry.data.weight,
+      date: entry.data.date.toISOString(),
+      tags: sortedTags,
+      links: Object.entries(entry.data.links).map(([name, link]) => ({ name, link })),
+      sentence: entry.data.sentence,
+      description: entry.data.description,
+      search_term: `${entry.data.auth} ${entry.data.name} ${entry.data.search_terms ?? ''}`.toLowerCase(),
+      img: cover.src,
+      cover: { srcset: cover.srcset },
+      video: entry.data.video,
+    };
+  })
+);
+
+const totalReviews = posts.length;
+---
+<BaseLayout
+  title="The Reading Nook"
+  description="Reviews of progression fantasy and LitRPG books, ranked and filtered."
+>
+  <div class="content content-full">
+    <div class="section-header mt-12 pb-2">
+      <h1>The Reading Nook</h1>
+    </div>
+    <ReviewsExplorer client:load posts={posts} totalReviews={totalReviews} />
+  </div>
+</BaseLayout>

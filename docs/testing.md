@@ -42,8 +42,8 @@ Playwright MCP server and can:
 | Page | What to look for |
 |---|---|
 | `/` | Hero, featured reviews, section links |
-| `/reviews/` | ReviewsExplorer filter chips and search |
-| `/reviews/flowchart/` | Flowchart renders, nodes draggable |
+| `/book-reviews/` | ReviewsExplorer filter chips and search |
+| `/book-reviews/flowchart/` | Flowchart renders, nodes draggable |
 | `/artists/` | ArtistsExplorer search and grid |
 | `/kitchensink/` | Full visual-regression playground (typography, components, colour swatches) |
 

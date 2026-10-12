@@ -9,11 +9,11 @@ description: >-
 
 ## When this applies
 
-The user names a **book** and **author** and wants a **new review stub** in `content/reviews/<slug>/index.md`, with links, blurb, and optional cover file.
+The user names a **book** and **author** and wants a **new review stub** in `content/book-reviews/<slug>/index.md`, with links, blurb, and optional cover file.
 
-## Content model (from existing reviews)
+## Content model (from existing book-reviews)
 
-Create `content/reviews/<slug>/index.md` plus assets in the same folder.
+Create `content/book-reviews/<slug>/index.md` plus assets in the same folder.
 
 ### Front matter (YAML)
 
@@ -24,7 +24,7 @@ Create `content/reviews/<slug>/index.md` plus assets in the same folder.
 | `auth` | yes | Author as credited (pen names, spacing as on listings). |
 | `description` | yes | One line for the reviews list; can start from blurb + edit. |
 | `date` | yes | `YYYY-MM-DD` (today unless user specifies). |
-| `categories` | yes | Always `[reviews]`. |
+| `categories` | yes | Always `[book-reviews]`. |
 | `review` | yes | Tier letter (site uses `S`, `A`, `B`, `C`, `F`, `π`, etc.). **Default for new stubs: `C`.** User may change after writing. |
 | `weight` | yes | Numeric sort on tier list; use a temporary value (e.g. `50`) if final position is unknown. |
 | `sentence` | yes | One-line hook; often the publisher/tagline from Amazon—may match first line of blurb. |
@@ -50,7 +50,7 @@ Create `content/reviews/<slug>/index.md` plus assets in the same folder.
 
 ### 1. Confirm target path
 
-- Propose `content/reviews/<slug>/` from title; adjust if the user prefers a different slug.
+- Propose `content/book-reviews/<slug>/` from title; adjust if the user prefers a different slug.
 
 ### 2. Research links (web search)
 
@@ -86,7 +86,7 @@ If any source is missing (no RR, no audio, etc.), omit that key—do not invent 
 - Download into the review folder:
 
 ```bash
-curl -fsSL -o "content/reviews/<slug>/cover.jpg" "<image-url>"
+curl -fsSL -o "content/book-reviews/<slug>/cover.jpg" "<image-url>"
 ```
 
 - If the file is PNG (check magic bytes or URL), use `cover.png` instead. **Final name must be** `cover.jpg` or `cover.png` only (no hashed filenames).
@@ -122,7 +122,7 @@ links:
     amazon: https://www.amazon.com/...
     audible: https://www.audible.com/...
     royal_road: https://www.royalroad.com/fiction/...
-aliases: [/reviews/<slug>]
+aliases: [/book-reviews/<slug>]
 tags: [in-progress, litrpg]
 sentence: "Official tagline or first hook sentence."
 ---
