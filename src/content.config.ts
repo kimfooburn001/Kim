@@ -4,7 +4,7 @@ import { glob } from 'astro/loaders';
 const REVIEW_TIER = z.enum(['π', 'S', 'A', 'B', 'C', 'D', 'F']);
 
 const reviews = defineCollection({
-  loader: glob({ pattern: '*/index.md', base: './content/reviews' }),
+  loader: glob({ pattern: '*/index.md', base: './content/book-reviews' }),
   schema: ({ image: _image }) =>
     z.object({
       title: z.string(),
@@ -13,7 +13,7 @@ const reviews = defineCollection({
       sentence: z.string(),
       date: z.coerce.date(),
       auth: z.string(),
-      categories: z.array(z.string()).default(['reviews']),
+      categories: z.array(z.string()).default(['book-reviews']),
       review: REVIEW_TIER,
       weight: z.number(),
       tags: z.array(z.string()).default([]),
@@ -51,4 +51,4 @@ const blogs = defineCollection({
   }),
 });
 
-export const collections = { reviews, blogs };
+export const collections = { book-reviews, blogs };
