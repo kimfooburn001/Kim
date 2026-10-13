@@ -3,7 +3,7 @@ import { glob } from 'astro/loaders';
 
 const REVIEW_TIER = z.enum(['π', 'S', 'A', 'B', 'C', 'D', 'F']);
 
-const reviews = defineCollection({
+const bookReviews = defineCollection({
   loader: glob({ pattern: '*/index.md', base: './content/book-reviews' }),
   schema: ({ image: _image }) =>
     z.object({
@@ -51,4 +51,4 @@ const blogs = defineCollection({
   }),
 });
 
-export const collections = { reviews, blogs };
+export const collections = { bookReviews, blogs };
