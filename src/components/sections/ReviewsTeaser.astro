@@ -17,7 +17,7 @@ const bookReviews = (await getCollection('bookReviews'))
   </div>
   <div class="max-w-sm mx-auto md:max-w-none">
     <div class="grid gap-12 md:grid-cols-3 lg:grid-cols-4 lg:grid-cols-5 md:gap-x-6 md:gap-y-8 items-start">
-      {reviews.map((entry) => <ReviewCoverCard entry={entry} />)}
+      {bookReviews.map((entry) => <ReviewCoverCard entry={entry} />)}
     </div>
   </div>
 </div>
