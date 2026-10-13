@@ -51,4 +51,4 @@ const blogs = defineCollection({
   }),
 });
 
-export const collections = { bookReviews, blogs };
+export const collections = { reviews, blogs };
