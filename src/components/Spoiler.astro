@@ -1,0 +1,32 @@
+---
+// src/components/Spoiler.astro
+---
+
+<span class="spoiler-wrapper inline-block cursor-pointer select-none">
+  <span class="spoiler-content bg-neutral-800 text-neutral-800 rounded px-1 transition-colors duration-150">
+    <slot />
+  </span>
+</span>
+
+<script>
+  function setupSpoilers() {
+    const spoilers = document.querySelectorAll('.spoiler-wrapper');
+    
+    spoilers.forEach((el) => {
+      el.addEventListener('click', () => {
+        const content = el.querySelector('.spoiler-content');
+        if (content) {
+          content.classList.toggle('bg-neutral-800');
+          content.classList.toggle('text-neutral-800');
+          content.classList.toggle('text-neutral-100');
+        }
+      });
+    });
+  }
+
+  // Run on initial load
+  setupSpoilers();
+
+  // Re-run on Astro view transitions if enabled
+  document.addEventListener('astro:after-swap', setupSpoilers);
+</script>
