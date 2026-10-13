@@ -37,7 +37,7 @@ Player Manager is a progression fantasy set in the modern world. It's perfect fo
 
 —-C1—-
 
-I asked him what it was like managing against you and he said it was like being caught in a trap and when you got out there was a bigger, deeper trap.
+<span class="spoiler">I asked him what it was like managing against you and he said it was like being caught in a trap and when you got out there was a bigger, deeper trap.</span>
 
 Oh, that’s true, that is what it looks like from the opposite side doesn’t it, cause he changes formation immediately that it feels like he set up layers what to do if this happens 😆 
 
@@ -81,9 +81,9 @@ And hmmm, what if Sam doesn’t to leave?
 
 ——-
 
-When it came to quality, I was on a desert island. Pascal and Youngster were swimming towards me as fast as they could. Henri was on an air mattress holding a shiny metal sheet under his face. Sharknado was going super fast in a huge zigzag that brought him little closer. Zach was on a fast dinghy but had decided to replace the engine with sticks of dynamite that he was tossing into the water behind him to make himself go 'real fast'. Then loads of Exit Trials kids were in water wings splashing around having a lovely old time.
+<span class="spoiler">When it came to quality, I was on a desert island. Pascal and Youngster were swimming towards me as fast as they could. Henri was on an air mattress holding a shiny metal sheet under his face. Sharknado was going super fast in a huge zigzag that brought him little closer. Zach was on a fast dinghy but had decided to replace the engine with sticks of dynamite that he was tossing into the water behind him to make himself go 'real fast'. Then loads of Exit Trials kids were in water wings splashing around having a lovely old time.
 
-Yeah, I was going to have to carry the team for a while.
+Yeah, I was going to have to carry the team for a while.</span>
 
 Oh man, this passage is lovely, the imagery and the vibe it’s showing, like I can just imagine Max sitting there quietly, with one corner smiling in a mix of fondness and wryness or something haha All paternal, liking the vibes ☺️
 
